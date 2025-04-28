@@ -1,150 +1,207 @@
-# EX-11-EMI-CALCULATOR
+# EX-16-LEFT-SHIFT-OPERATION
+## AIM
+To write a C Program to perform the basic left shift operation for 44 integer number with 3 shifts.
+
+## ALGORITHM
+1.	Start the program.
+2.	Assign values of a and b as 44 and 3.
+3.	Use left shift operator (<<) and shift the value of a three times.
+4.	Display the result.
+5.	Stop the program.
+
+## PROGRAM
+~~~
+#include <stdio.h>
+
+int main() {
+    int num = 44;
+    int shift = 3;
+    int result;
+
+    result = num << shift;
+
+    printf("Left shift of %d by %d positions is: %d\n", num, shift, result);
+
+    return 0;
+}
+~~~
+
+## OUTPUT
+
+![image](https://github.com/user-attachments/assets/4a34f073-ec31-4928-bf40-5dfd11877638)
+
+## RESULT
+Thus the program to perform the basic left shift operation for 44 integer number with 3 shifts has been executed successfully.
+
+
+# EX-17-TWO-NUMBERS-ARE-EQUAL-OR-NOT
+
 
 ## AIM
 
-To write a program to prepare EMI calculator using function without return type and with arguments.
+Write a C Program to check whether the two numbers are equal or not using simple if statement.
 
 ## ALGORITHM
 
 1.	Start the program.
-2.	Read principal amount, rate of interest and months.
-3.	Pass these values as arguments to function.
-4.	Calculate EMI using the formula, amt=(prpow(1+r,t))/(pow(1+r,t)-1)
+2.	Read two numbers.
+3.	If first number is equal to second number, display both are equal.
+4.	Otherwise display both are not equal.
+5.	Stop the program.
+
+## PROGRAM
+~~~
+#include<stdio.h>
+int main()
+{
+    int a,b;
+    scanf("%d%d",&a,&b);
+    if(a==b)
+    {
+        printf("X is equal to Y");
+    }
+    else
+    {
+        printf("X is NOT equal to Y");
+    }
+    return 0;
+}
+~~~
+## OUTPUT
+
+![437893460-91b7b5ea-5d03-4245-a2a5-870fce2b4c52](https://github.com/user-attachments/assets/9f19b03a-5396-4e95-97f0-1f81ee1e631d)
+
+           
+## RESULT
+
+Thus the program to check whether the two numbers are equal or not using simple if statement has been executed successfully
+ 
+ 
+
+
+# EX-18-STRING-LOWERCASE-CONVERSION
+## AIM
+Write a C Program to convert the given string into lowercase.
+
+## ALGORITHM
+1.	Start the program.
+2.	Read a string variable.
+3.	Using tolower( ) function convert the given string into its lowercase.
+4.	Display the result.
+5.	Stop the program.
+
+## PROGRAM
+~~~
+#include<stdio.h>
+#include<ctype.h>
+int main()
+{
+    char str[100];
+    scanf("%s",str);
+    for(int i=0;str[i] != '\0';i++)
+    {
+        str[i] = tolower(str[i]);
+    }
+    printf("Lower case String is:%s",str);
+    return 0;
+}
+~~~
+## OUTPUT
+
+![437893761-52a2eb2f-e4bf-465a-8b2c-67e070c52229](https://github.com/user-attachments/assets/6981834a-576d-4b4c-b6c3-6107d68fec3c)
+
+
+## RESULT
+Thus the program to convert the given string into lowercase has been executed successfully
+ 
+ 
+
+
+# EX-19-COUNT-OF-WORDS-IN-A-STRING
+## AIM
+Write a C Program to count the total number of words in a given string using do While loop.
+
+## ALGORITHM
+1.	Start the program.
+2.	Read a string variable.
+3.	Using for loop, inspect the string character by character.
+4.	Whenever a space is encountered increment count by 1.
 5.	Display the result.
 6.	Stop the program.
 
 ## PROGRAM
-
-
+~~~
+#include<stdio.h>
+int main()
+{
+    char a[100];
+    int l=0;
+    fgets(a,sizeof(a),stdin);
+    while(a[l]!='\0')
+    {
+        l++;
+    }
+    printf("%d",l-1);
+    return 0;
+}
+~~~
 ## OUTPUT
 
-
-
-
+![437894238-84b3385e-83a0-447e-a822-1139f2a28ae2](https://github.com/user-attachments/assets/1dd5621c-8bca-4aa9-ac8d-aef1fa480378)
 
 ## RESULT
-
-Thus the program to prepare EMI calculator using function without return type with arguments has been executed successfully
+Thus the program to count the total number of words in a given string using do While loop has been executed successfully
  
  
 
 
-# EX-12-FIBONACCI-SERIES
+# EX  -20 -COMPARING TWO STRINGS
 ## AIM
-To write a C program to generate the Fibonacci series for the value 6.
-
+write a Program to compare two strings without using strcmp().
 ## ALGORITHM
-1.	Start the program.
-2.	Read number of terms to display.
-3.	Add the previous two terms and store it in new term.
-4.	Assign 2nd term to 1st term and 3rd term to 2nd term.
-5.	Repeat steps 3 and 4 n number of times.
-6.	Display the result.
-7.	Stop the program.
+Step 1: Start the program.
+Step 2: Declare two character arrays c1 and c2 of size 100 to store the strings. Also, declare an integer variable
+             flag and initialize it to 0, and i for indexing.      
+Step 3: Read the first string c1 using scanf("%[^\n]", c1); — this reads input until a newline is encountered 
+            (i.e., can include spaces).
+Step 4: Read the second string c2 using scanf("%s", c2); — this reads input until a space or newline (i.e., no 
+            spaces in the second string).
+Step 5: Start comparing characters of both strings from index i = 0.
+Step 6: Repeat the following while neither c1[i] nor c2[i] is '\0' (i.e., end of string):
+•	If c1[i] is not equal to c2[i], set flag = 1.
+•	Increment i by 1.
+Step 7: After the loop, check the value of flag:
+•	If flag == 0, print "strings are same".
+•	Otherwise, print "strings are not same".
+Step 8: End the program.
 
 ## PROGRAM
-
+~~~
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char str[10];
+    char srt[10];
+    scanf("%s",str);
+    scanf("%s",srt);
+    int s = strcmp(str,srt);
+    if(s==0)
+    {
+        printf("strings are same");
+    }
+    else
+    {
+        printf("strings are not same");
+    }
+    return 0;
+}
+~~~
 ## OUTPUT
-
-
-
-
-
-
+ 
+![437896644-7f0c8569-9cd9-444e-a087-bbab127da8bc](https://github.com/user-attachments/assets/21d38762-0090-4525-be5f-a3b15f9b0f85)
 
 
 ## RESULT
-Thus the program to generate the Fibonacci series for the value 6 has been executed successfully.
- 
- 
-
-
-# EX-13-ONE-DIMENSIONAL-ARRAY
-## AIM
-To write a C program to read n elements as input and print the last element of the array.
-
-## ALGORITHM
-1.	Start the program.
-2.	Read a variable.
-3.	Read the array values n number of times.
-4.	Print the last element.
-5.	Stop the program.
-
-## PROGRAM
-
-## OUTPUT
-
-
-
-
-
-
-
-
-
-## RESULT
-Thus the program to read n elements as input and print the last element of the array has been executed successfully.
- 
- 
-
-
-# EX-14-POSITIVE-ARRAY-ELEMENTS
-## AIM
-To write a C Program to count total number of positive elements in an array.
-
-## ALGORITHM
-1.	Start the program.
-2.	Read a variable.
-3.	Read the array values n number of times.
-4.	If the array value can be divided by 2 then increment count by 1.
-5.	Display result.
-6.	Stop the program.
-
-## PROGRAM
-
-
-## OUTPUT
-
-
-
-
-
-## RESULT
-Thus the program to count total number of positive elements in an array has been executed successfully.
-
-
-
-
-
- 
- 
-
-
-# EX -15 - Replace All Even Elements With 'E' In One Dimensional Array
-
-## Aim:
-To write a C program to replace all even elements with 'E' in one dimensional array
-
-## Algorithm:
-1.	Input the array:
-  Read the size of the array.
-  Input the elements of the array.
-2.	Iterate through the array:
- 	For each element of the array, check if the element is even (i.e., if the element modulo 2 equals 0).
-3.	Replace even elements with 'E':
-     If an element is even, replace that element with the character 'E'.
-4.	Output the updated array:
- Print the updated array after replacements.
-
-## Program:
-
-## Output:
- 
-
-
-## Result:
-
-Thus, the program to replace all even elements with 'E' in one dimensional array was verified successfully.
-
-
+Thus the C Program to compare two strings without using strcmp() has been executed successfully.
 
